@@ -63,8 +63,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/employees/getUnit/{id}', "EmployeeController@getUnit")->name('employees.unit');
     Route::get('/employees/getChildUnit/{id}', "EmployeeController@getChildUnit")->name('employees.childUnit');
     //users
-    Route::patch('users/{user}/update', "UserController@update")->name('users.update');
-    Route::resource('users', UserController::class)->except('create', 'show');
+    Route::patch('users/{user}/update', "UserController@updateU")->name('users.update');
+    Route::resource('users', UserController::class)->except('create', 'show','update');
 
     //Deliveries
     Route::resource('deliveries', DeliveryController::class)->except('show');
@@ -81,6 +81,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/invoices/detail/{detail}/edit', "InvoiceController@updateDetail")->name('invoices.detail.update');
     Route::get('/invoices/detail/{invoice}/create', "InvoiceController@addDetailGet")->name('detail.add.get');
     Route::post('/invoices/detail/{invoice}/create', "InvoiceController@addDetailPost")->name('detail.add.post');
+
+    //Suppliers
+    Route::resource('suppliers', SupplierController::class);
 
     //Stocks
     Route::resource('stocks', StockController::class)->except('show');

@@ -37,7 +37,7 @@ class HomeController extends Controller
         $products = Product::count();
         $employees = Employee::count();
         $repairs = Repair::count();
-        $logs = Log::paginate('10');
+        $logs = Log::latest()->take(15)->get();
         return view('welcome', compact('user','products','employees','repairs','logs'));
     }
 

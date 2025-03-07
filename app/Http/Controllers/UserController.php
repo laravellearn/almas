@@ -56,7 +56,7 @@ class UserController extends Controller
         return view('users.edit', compact('users', 'userEdit', 'roles', 'organizations'));
     }
 
-    public function update(Request $request, User $user)
+    public function updateU(Request $request, User $user)
     {
         $request->isActive == "on" ? $request->isActive = 1 : $request->isActive = 0;
         $user->update([

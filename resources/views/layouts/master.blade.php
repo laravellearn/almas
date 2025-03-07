@@ -139,6 +139,15 @@ use Hekmatinasser\Verta\Verta; ?>
                                 </ul>
                             </li>
 
+                            
+                            @can('suppliers')
+                                <li
+                                    class=" {{ Request::routeIs(['suppliers.index', 'suppliers.edit']) ? 'active' : '' }}">
+                                    <a href="{{ route('suppliers.index') }}"><i
+                                            class="zmdi zmdi-view-dashboard"></i><span>تامین کنندگان</span></a>
+                                </li>
+                            @endcan
+
                             {{-- <li
                                 class="treeview {{ Request::routeIs(['reports.deliveries.index']) ? 'menu-open' : '' }}">
                             @canany(['reports'])
