@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\License;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 

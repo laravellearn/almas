@@ -16,6 +16,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        
+        DB::table('licenses')->insert(
+            [
+                [
+                    'id' => 1,
+                    'api' => 'rtlead27bc21537fdcb11b3b340a53242',
+                    'product_id' => '237185',
+                    'order_id' => '',
+                    'domain' => '',
+                    'username' => ''
+                ]
+            ]
+        );
+
+
         DB::table('permissions')->insert(
             [
                 [

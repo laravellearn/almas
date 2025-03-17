@@ -127,3 +127,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/reports/warehouse/filter', "ReportController@warehouseFilter")->name('warehouse.filter');
 
 });
+
+Route::patch('/register/license/{id}', action: "LicenseController@update")->name('license.update');
