@@ -10,9 +10,13 @@ class LicenseController extends Controller
 {
     
 
-    public function update($id,Request $request)
+    public function index()
     {
-        dd($id);
+        dd('ok');
+        return view('lic');
+    }
+    public function register(Request $request)
+    {
         $license = License::where('id', "1")->first();
         $license->update([
             'username' => $request['username'],

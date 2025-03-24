@@ -16,12 +16,11 @@
                                     @php
                                         $id = 1;
                                     @endphp
-                                    <form action="{{ route('license.update',$id) }}" method="POST">
+                                    <form action="{{ route('license.register') }}" method="POST">
 
-                                        @method('patch')
                                         @csrf
-                                        @if (isset($errors))
-                                            {{ $errors }}
+                                        @if (isset($error))
+                                            {{ $error }}
                                         @endif
                                         <div class="row">
 

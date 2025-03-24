@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Auth::routes();
 
 //logout
@@ -21,7 +22,7 @@ Route::get('/logout', function () {
     return redirect()->route('login');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth'])->group(function () {
     //index
     Route::get('/', "HomeController@index")->name('index');
 
@@ -128,4 +129,4 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::patch('/register/license/{id}', action: "LicenseController@update")->name('license.update');
+Route::post('/database/seeder', "InstallerController@index")->name('databaseSeeder');

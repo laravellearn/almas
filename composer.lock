@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6e4a1e261bcfbda1c76a62519306bbe",
+    "content-hash": "16b79573fed56b61c797539343e9688d",
     "packages": [
         {
             "name": "brick/math",
@@ -509,6 +509,66 @@
                 }
             ],
             "time": "2024-12-27T00:36:43+00:00"
+        },
+        {
+            "name": "erag/installererag",
+            "version": "v1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eramitgupta/InstallerErag.git",
+                "reference": "d7206368c8613ce362f71b4ae00fddc1b9e54f20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eramitgupta/InstallerErag/zipball/d7206368c8613ce362f71b4ae00fddc1b9e54f20",
+                "reference": "d7206368c8613ce362f71b4ae00fddc1b9e54f20",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.12|^9.0|^10.0|^11.0",
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "InstallerErag": "InstallerErag\\Facades\\InstallerErag"
+                    },
+                    "providers": [
+                        "InstallerErag\\InstallerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "InstallerErag\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Er Amiit Gupta",
+                    "email": "info.eramitgupta@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Installer: Simplifies Laravel application installation for a seamless setup experience. Requires PHP 8.0.0+",
+            "keywords": [
+                "installation",
+                "installer",
+                "laravel",
+                "laravel Installer",
+                "laravel package",
+                "setup"
+            ],
+            "support": {
+                "issues": "https://github.com/eramitgupta/InstallerErag/issues",
+                "source": "https://github.com/eramitgupta/InstallerErag/tree/v1.8.0"
+            },
+            "time": "2024-10-07T14:54:31+00:00"
         },
         {
             "name": "fruitcake/php-cors",

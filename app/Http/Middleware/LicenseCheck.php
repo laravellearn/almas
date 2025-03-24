@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\License;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Symfony\Component\HttpFoundation\Response;
 
 class LicenseCheck
@@ -16,6 +17,10 @@ class LicenseCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
+        \Artisan::call('optimize');
+        \Artisan::call('config:clear');
+
+
         $license = License::where('id', 1)->first();
         $result = $this->send($license->api, $license->username, $license->order_id, $license->domain, $license->product_id);
 
@@ -52,17 +57,18 @@ class LicenseCheck
                 break;
         }
 
-        if($error != NULL){
-            return response()->view('lic',data: compact('error'));
-        }else{
+        if ($error != NULL) {
+            return response()->view(view: 'lic', data: compact('error'));
+        } else {
 
             return $next($request);
         }
 
 
+
     }
 
-        
+
     public function send($api, $username, $order_id, $domain, $productId)
     {
         $url = 'https://www.rtl-theme.com/oauth/';

@@ -7,6 +7,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "erag/installererag": "^1.8",
         "guzzlehttp/guzzle": "^7.2",
         "hekmatinasser/verta": "^8.4",
         "laravel/framework": "^11.0.0",
